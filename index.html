@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>N</text></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 48'><path d='M8 24 C14 4, 50 4, 56 24 C50 44, 14 44, 8 24 Z' fill='none' stroke='%230D9488' stroke-width='3.2'/><g fill='%230D9488'><path d='M32 24 L21.71 17.82 A12 12 0 0 1 42.29 17.82 Z' transform='translate(0 -0.8)'/><path d='M32 24 L42.50 18.18 A12 12 0 0 1 32.21 36.00 Z' transform='translate(0.69 0.4)'/><path d='M32 24 L31.79 36.00 A12 12 0 0 1 21.50 18.18 Z' transform='translate(-0.69 0.4)'/></g></svg>">
 </head>
 <body>
 
@@ -18,37 +18,250 @@
   <header class="header">
     <div class="container header__inner">
       <a href="/" class="logo" aria-label="Numiris AI">
-        <span class="logo__mark">N</span>
-        <span class="logo__text">numiris</span>
+        <span class="logo__mark">
+          <svg viewBox="0 0 64 48" aria-hidden="true">
+            <path d="M8 24 C14 4, 50 4, 56 24 C50 44, 14 44, 8 24 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+            <g fill="currentColor">
+              <path d="M32 24 L21.71 17.82 A12 12 0 0 1 42.29 17.82 Z" transform="translate(0 -0.8)"/>
+              <path d="M32 24 L42.50 18.18 A12 12 0 0 1 32.21 36.00 Z" transform="translate(0.69 0.4)"/>
+              <path d="M32 24 L31.79 36.00 A12 12 0 0 1 21.50 18.18 Z" transform="translate(-0.69 0.4)"/>
+            </g>
+          </svg>
+        </span>
+        <span class="logo__text">Numiris AI</span>
       </a>
-      <a href="#contact" class="header__cta">Get a demo</a>
+      <a href="#contact" class="header__cta">Get started</a>
     </div>
   </header>
 
   <!-- Hero -->
   <section class="hero" id="hero">
-    <div class="container">
+    <div class="container hero__grid">
       <div class="hero__content">
         <h1 class="hero__title">
-          The financial brain<br>
-          <span class="hero__title-accent">for your organization.</span>
+          Maximize your <span class="hero__title-accent">cashflow</span>
         </h1>
         <p class="hero__sub">
           Numiris increases your cashflow &mdash; by automating AP, accelerating collections, and closing your books in hours, not weeks.
         </p>
+        <div class="hero__vp" role="tablist" aria-label="Product capabilities" data-active="0">
+          <button class="hero__vp-item" type="button" role="tab" data-index="0" aria-selected="true">
+            <span class="hero__vp-label">Real-time view of Accounts Payable &amp; Receivables</span>
+            <span class="hero__vp-progress" aria-hidden="true"><span class="hero__vp-progress-bar"></span></span>
+          </button>
+          <button class="hero__vp-item" type="button" role="tab" data-index="1" aria-selected="false">
+            <span class="hero__vp-label">360° view of your finances</span>
+            <span class="hero__vp-progress" aria-hidden="true"><span class="hero__vp-progress-bar"></span></span>
+          </button>
+          <button class="hero__vp-item" type="button" role="tab" data-index="2" aria-selected="false">
+            <span class="hero__vp-label">Works with your existing software</span>
+            <span class="hero__vp-progress" aria-hidden="true"><span class="hero__vp-progress-bar"></span></span>
+          </button>
+        </div>
         <div class="hero__ctas">
-          <a href="#contact" class="btn btn--primary">
-            Get a demo
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#capabilities" class="btn btn--secondary">
+          <form class="hero-form contact-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLScuKjWUGT5FaWUtdIJMVyp7aFwGRwzbZFn9uRutOY9sIavdEQ/formResponse" data-source="Hero">
+            <input type="hidden" name="entry.762334583" value="Hero">
+            <label for="hero-email" class="sr-only">Work email</label>
+            <div class="hero-form__pill">
+              <input type="email" id="hero-email" name="entry.33884676" class="hero-form__input" placeholder="Enter your work email" required autocomplete="email">
+              <button type="submit" class="hero-form__submit">
+                Contact Us
+              </button>
+            </div>
+          </form>
+          <a href="#capabilities" class="btn-link">
             See how it works
           </a>
         </div>
-        <div class="hero__pills">
-          <span class="pill">AP Automation</span>
-          <span class="pill">Cash Collection</span>
-          <span class="pill">Instant Close</span>
+      </div>
+
+      <div class="hero__visual" aria-hidden="true">
+        <!-- Scene 0: AP/AR real-time -->
+        <div class="mock-scene mock-scene--active" data-scene="0">
+          <!-- Main dashboard card -->
+          <div class="mock mock--dashboard">
+            <div class="mock__header">
+              <div class="mock__dots"><span></span><span></span><span></span></div>
+              <div class="mock__title">Cashflow</div>
+            </div>
+            <div class="mock__metric">
+              <div class="mock__metric-label">Net cash this month</div>
+              <div class="mock__metric-value">+$1.42M</div>
+              <div class="mock__metric-delta">▲ 18% vs last month</div>
+            </div>
+            <div class="mock__chart">
+              <svg viewBox="0 0 300 80" preserveAspectRatio="none" width="100%" height="80">
+                <defs>
+                  <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0D9488" stop-opacity="0.25"/>
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,60 L30,55 L60,58 L90,45 L120,48 L150,35 L180,38 L210,25 L240,22 L270,15 L300,10 L300,80 L0,80 Z" fill="url(#chartFill)"/>
+                <path d="M0,60 L30,55 L60,58 L90,45 L120,48 L150,35 L180,38 L210,25 L240,22 L270,15 L300,10" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="mock__rows">
+              <div class="mock__row">
+                <span class="mock__row-dot mock__row-dot--teal"></span>
+                <span class="mock__row-label">Invoices processed</span>
+                <span class="mock__row-value">1,284</span>
+              </div>
+              <div class="mock__row">
+                <span class="mock__row-dot mock__row-dot--blue"></span>
+                <span class="mock__row-label">Collected this week</span>
+                <span class="mock__row-value">$312K</span>
+              </div>
+              <div class="mock__row">
+                <span class="mock__row-dot mock__row-dot--amber"></span>
+                <span class="mock__row-label">Close progress</span>
+                <span class="mock__row-value">92%</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating invoice card -->
+          <div class="mock mock--invoice">
+            <div class="mock__pill">INVOICE MATCHED</div>
+            <div class="mock__invoice-vendor">Acme Supplies Co.</div>
+            <div class="mock__invoice-amount">$24,580.00</div>
+            <div class="mock__invoice-foot">
+              <span class="mock__check">
+                <svg viewBox="0 0 16 16" width="14" height="14" fill="none"><circle cx="8" cy="8" r="7" fill="#0D9488"/><path d="M5 8l2 2 4-4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </span>
+              <span>PO #4821 · Scheduled for payment</span>
+            </div>
+          </div>
+
+          <!-- Floating reminder card -->
+          <div class="mock mock--reminder">
+            <div class="mock__reminder-header">
+              <span class="mock__avatar">NR</span>
+              <div>
+                <div class="mock__reminder-title">Reminder sent</div>
+                <div class="mock__reminder-sub">to Globex Inc. · 3 days overdue</div>
+              </div>
+            </div>
+            <div class="mock__reminder-amt">$8,420 expected in 2 days</div>
+          </div>
+        </div>
+
+        <!-- Scene 1: 360° view of finances -->
+        <div class="mock-scene" data-scene="1">
+          <div class="mock mock--kpi">
+            <div class="mock__header">
+              <div class="mock__dots"><span></span><span></span><span></span></div>
+              <div class="mock__title">Finance overview</div>
+            </div>
+            <div class="mock__kpi-grid">
+              <div class="mock__kpi-tile">
+                <div class="mock__kpi-label">Cash on hand</div>
+                <div class="mock__kpi-value">$8.4M</div>
+                <div class="mock__kpi-delta">▲ 4.2%</div>
+              </div>
+              <div class="mock__kpi-tile">
+                <div class="mock__kpi-label">P&amp;L (MTD)</div>
+                <div class="mock__kpi-value">+$612K</div>
+                <div class="mock__kpi-delta">▲ 11%</div>
+              </div>
+              <div class="mock__kpi-tile">
+                <div class="mock__kpi-label">Burn / mo</div>
+                <div class="mock__kpi-value">$220K</div>
+                <div class="mock__kpi-delta mock__kpi-delta--down">▼ 8%</div>
+              </div>
+              <div class="mock__kpi-tile">
+                <div class="mock__kpi-label">Runway</div>
+                <div class="mock__kpi-value">38 mo</div>
+                <div class="mock__kpi-delta">+3 mo</div>
+              </div>
+            </div>
+            <div class="mock__chart mock__chart--compact">
+              <svg viewBox="0 0 300 60" preserveAspectRatio="none" width="100%" height="60">
+                <defs>
+                  <linearGradient id="chartFill2" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0D9488" stop-opacity="0.22"/>
+                    <stop offset="100%" stop-color="#0D9488" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path d="M0,42 L40,38 L80,44 L120,30 L160,34 L200,22 L240,18 L300,10 L300,60 L0,60 Z" fill="url(#chartFill2)"/>
+                <path d="M0,42 L40,38 L80,44 L120,30 L160,34 L200,22 L240,18 L300,10" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Floating ledger card -->
+          <div class="mock mock--ledger">
+            <div class="mock__pill">LEDGER LIVE</div>
+            <div class="mock__ledger-rows">
+              <div class="mock__ledger-row">
+                <span class="mock__ledger-label">Revenue</span>
+                <span class="mock__ledger-value mock__ledger-value--up">+$1.42M</span>
+              </div>
+              <div class="mock__ledger-row">
+                <span class="mock__ledger-label">COGS</span>
+                <span class="mock__ledger-value mock__ledger-value--down">−$310K</span>
+              </div>
+              <div class="mock__ledger-row">
+                <span class="mock__ledger-label">Operating</span>
+                <span class="mock__ledger-value mock__ledger-value--down">−$498K</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scene 2: Works with existing software -->
+        <div class="mock-scene" data-scene="2">
+          <div class="mock mock--integrations">
+            <div class="mock__int-orbit">
+              <svg class="mock__int-spokes" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <line x1="50" y1="50" x2="50" y2="14"/>
+                <line x1="50" y1="50" x2="86" y2="50"/>
+                <line x1="50" y1="50" x2="50" y2="86"/>
+                <line x1="50" y1="50" x2="14" y2="50"/>
+              </svg>
+              <span class="mock__int-node mock__int-node--top" aria-label="Gmail">
+                <svg viewBox="0 0 48 36" width="40" height="30" aria-hidden="true">
+                  <path d="M4 6v22a2 2 0 0 0 2 2h4V14.6l14 10.2 14-10.2V30h4a2 2 0 0 0 2-2V6a2.8 2.8 0 0 0-4.48-2.24L24 15 8.48 3.76A2.8 2.8 0 0 0 4 6z" fill="#EA4335"/>
+                  <path d="M10 14.6L24 24.8l14-10.2V30h-4V19l-10 7.3L14 19v11h-4V14.6z" fill="#C5221F" opacity="0.85"/>
+                </svg>
+              </span>
+              <span class="mock__int-node mock__int-node--right" aria-label="Microsoft Outlook">
+                <svg viewBox="0 0 36 28" width="36" height="28" aria-hidden="true">
+                  <rect x="2" y="3" width="22" height="22" rx="2" fill="#0072C6"/>
+                  <text x="13" y="19" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">O</text>
+                  <path d="M24 10l10-5v18l-10-5v-8z" fill="#50B0F4"/>
+                  <path d="M24 10l10-5v3l-10 5v-3z" fill="#0072C6"/>
+                </svg>
+              </span>
+              <span class="mock__int-node mock__int-node--bottom" aria-label="Oracle NetSuite">
+                <svg viewBox="0 0 44 24" width="44" height="24" aria-hidden="true">
+                  <rect x="1" y="1" width="42" height="22" rx="3" fill="#F58025"/>
+                  <text x="22" y="17" font-family="Arial, sans-serif" font-size="13" font-weight="800" fill="#fff" text-anchor="middle" letter-spacing="0.5">NS</text>
+                </svg>
+              </span>
+              <span class="mock__int-node mock__int-node--left" aria-label="QuickBooks">
+                <svg viewBox="0 0 32 32" width="36" height="36" aria-hidden="true">
+                  <circle cx="16" cy="16" r="15" fill="#2CA01C"/>
+                  <path d="M12 9a7 7 0 0 0 0 14h1v-3h-1a4 4 0 0 1 0-8h4v14h3V9h-7z" fill="#fff"/>
+                  <path d="M20 23a7 7 0 0 0 0-14h-1v3h1a4 4 0 0 1 0 8h-4V6h-3v17h7z" fill="#fff" opacity="0.85"/>
+                </svg>
+              </span>
+              <div class="mock__int-hub">
+                <svg viewBox="0 0 64 48" aria-hidden="true">
+                  <path d="M8 24 C14 4, 50 4, 56 24 C50 44, 14 44, 8 24 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+                  <g fill="currentColor">
+                    <path d="M32 24 L21.71 17.82 A12 12 0 0 1 42.29 17.82 Z" transform="translate(0 -0.8)"/>
+                    <path d="M32 24 L42.50 18.18 A12 12 0 0 1 32.21 36.00 Z" transform="translate(0.69 0.4)"/>
+                    <path d="M32 24 L31.79 36.00 A12 12 0 0 1 21.50 18.18 Z" transform="translate(-0.69 0.4)"/>
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <div class="mock__int-foot">
+              <span class="mock__pill">SYNCING</span>
+              <span class="mock__int-status">2,418 transactions in last 24h</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -117,22 +330,125 @@
   <section class="how-it-works" id="how-it-works">
     <div class="container">
       <div class="section-label">How it works</div>
-      <h2 class="section-title">Up and running in days, not months.</h2>
+      <h2 class="section-title">From invoice to closed books,<br>automatically.</h2>
       <div class="steps">
+
         <div class="step">
-          <div class="step__number">1</div>
-          <h3 class="step__title">Connect your systems</h3>
-          <p class="step__desc">Plug into your existing accounting software and banking. No rip-and-replace required.</p>
+          <div class="step__icon">
+            <svg viewBox="0 0 48 48" fill="none" width="28" height="28" aria-hidden="true">
+              <rect x="6" y="10" width="28" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M6 14l14 10 14-10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <circle cx="36" cy="34" r="7" fill="#fff"/>
+              <circle cx="36" cy="34" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M40 38l3 3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="step__title">Scan your inbox</h3>
+          <p class="step__desc">We connect to your email and find incoming invoices.</p>
         </div>
+
         <div class="step">
-          <div class="step__number">2</div>
-          <h3 class="step__title">Automate workflows</h3>
-          <p class="step__desc">Numiris learns your processes and starts automating AP, collections, and reconciliation.</p>
+          <div class="step__icon">
+            <svg viewBox="0 0 48 48" fill="none" width="28" height="28" aria-hidden="true">
+              <path d="M12 6h16l8 8v28H12V6z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M28 6v8h8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M17 22h14M17 28h10M17 34h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M38 32l1.5 3 3 1.5-3 1.5-1.5 3-1.5-3-3-1.5 3-1.5z" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3 class="step__title">Read &amp; parse</h3>
+          <p class="step__desc">Extract vendor, amount, line items, and due date from any invoice format.</p>
         </div>
+
         <div class="step">
-          <div class="step__number">3</div>
-          <h3 class="step__title">Close &amp; collect</h3>
-          <p class="step__desc">Watch your cashflow improve as invoices process, payments collect, and books close automatically.</p>
+          <div class="step__icon">
+            <svg viewBox="0 0 48 48" fill="none" width="28" height="28" aria-hidden="true">
+              <rect x="6" y="10" width="20" height="26" rx="2" stroke="currentColor" stroke-width="2"/>
+              <rect x="22" y="14" width="20" height="26" rx="2" fill="#fff" stroke="currentColor" stroke-width="2"/>
+              <path d="M27 27l3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="step__title">Match to POs</h3>
+          <p class="step__desc">Reconcile each invoice against your purchase orders, flag exceptions.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 48 48" fill="none" width="28" height="28" aria-hidden="true">
+              <path d="M10 10a2 2 0 0 1 2-2h26v30H14a4 4 0 0 0-4 4V10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M10 38a4 4 0 0 1 4-4h24" stroke="currentColor" stroke-width="2"/>
+              <path d="M18 16h14M18 22h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="step__title">Update your books</h3>
+          <p class="step__desc">Post entries and sync transactions to your accounting system.</p>
+        </div>
+
+        <div class="step">
+          <div class="step__icon">
+            <svg viewBox="0 0 48 48" fill="none" width="28" height="28" aria-hidden="true">
+              <rect x="8" y="10" width="32" height="30" rx="2" stroke="currentColor" stroke-width="2"/>
+              <path d="M8 18h32" stroke="currentColor" stroke-width="2"/>
+              <path d="M16 6v8M32 6v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M18 28l4 4 8-8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="step__title">Close the month</h3>
+          <p class="step__desc">Run reconciliations at month-end. Books close themselves — no crunch.</p>
+        </div>
+
+      </div>
+
+      <div class="integrations-strip" aria-label="Works with QuickBooks, Oracle NetSuite, Gmail, and Microsoft Outlook">
+        <p class="integrations-strip__label">We work with</p>
+        <div class="integrations-strip__grid">
+
+          <div class="integrations-strip__item">
+            <span class="integrations-strip__logo">
+              <svg viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">
+                <circle cx="32" cy="32" r="30" fill="#2CA01C"/>
+                <path d="M24.5 17.5a14.5 14.5 0 0 0 0 29h2v-5.2h-2a9.3 9.3 0 1 1 0-18.6h4.1v28.5h5.4V17.5h-9.5z" fill="#fff"/>
+                <path d="M39.5 46.5a14.5 14.5 0 0 0 0-29h-2v5.2h2a9.3 9.3 0 1 1 0 18.6h-4.1V17.5h-5.4v29h9.5z" fill="#fff" opacity="0.85"/>
+              </svg>
+            </span>
+            <span class="integrations-strip__name">QuickBooks</span>
+          </div>
+
+          <div class="integrations-strip__item">
+            <span class="integrations-strip__logo">
+              <svg viewBox="0 0 140 36" width="150" height="38" aria-hidden="true">
+                <text x="70" y="28" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="30" font-weight="700" fill="#B8001F" letter-spacing="-0.8" text-anchor="middle">NetSuite</text>
+              </svg>
+            </span>
+            <span class="integrations-strip__name">Oracle NetSuite</span>
+          </div>
+
+          <div class="integrations-strip__item">
+            <span class="integrations-strip__logo">
+              <svg viewBox="0 0 96 72" width="72" height="54" aria-hidden="true">
+                <path d="M8 68h12V40L4 28v32a8 8 0 0 0 4 8z" fill="#4285F4"/>
+                <path d="M76 68h12a8 8 0 0 0 4-8V28L76 40v28z" fill="#34A853"/>
+                <path d="M76 40l16-12V14a8 8 0 0 0-13-6.2L76 10v30z" fill="#FBBC04"/>
+                <path d="M20 40L4 28V14a8 8 0 0 1 13-6.2L20 10v30z" fill="#C5221F"/>
+                <path d="M20 10v30l28 21 28-21V10L48 31 20 10z" fill="#EA4335"/>
+              </svg>
+            </span>
+            <span class="integrations-strip__name">Gmail</span>
+          </div>
+
+          <div class="integrations-strip__item">
+            <span class="integrations-strip__logo">
+              <svg viewBox="0 0 76 56" width="84" height="62" aria-hidden="true">
+                <rect x="2" y="6" width="46" height="44" rx="3" fill="#0F6CBD"/>
+                <ellipse cx="25" cy="28" rx="11" ry="13" fill="none" stroke="#fff" stroke-width="4.5"/>
+                <path d="M48 21l26-12v38L48 35V21z" fill="#41A5EE"/>
+                <path d="M48 21l26-12v4.5L48 25.5V21z" fill="#2B7CD3"/>
+                <path d="M48 21l13 7 13-7-13 7-13-7z" fill="#28A8EA" opacity="0"/>
+              </svg>
+            </span>
+            <span class="integrations-strip__name">Outlook</span>
+          </div>
+
         </div>
       </div>
     </div>
@@ -194,21 +510,14 @@
       <div class="footer-cta__inner">
         <h2 class="footer-cta__title">Ready to increase<br>your cashflow?</h2>
         <p class="footer-cta__sub">Get a free consultation. We&rsquo;ll show you exactly how Numiris can improve your financial operations.</p>
-        <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="contact">
-          <p class="form__hidden" aria-hidden="true">
-            <label>Don't fill this out: <input name="bot-field"></label>
-          </p>
-          <div class="form__field">
-            <label for="name" class="form__label">Name</label>
-            <input type="text" id="name" name="name" required class="form__input" placeholder="Jane Smith" autocomplete="name">
-          </div>
+        <form class="form contact-form" method="POST" action="https://docs.google.com/forms/d/e/1FAIpQLScuKjWUGT5FaWUtdIJMVyp7aFwGRwzbZFn9uRutOY9sIavdEQ/formResponse" data-source="Footer">
+          <input type="hidden" name="entry.762334583" value="Footer">
           <div class="form__field">
             <label for="email" class="form__label">Work email</label>
-            <input type="email" id="email" name="email" required class="form__input" placeholder="jane@company.com" autocomplete="email">
+            <input type="email" id="email" name="entry.33884676" required class="form__input" placeholder="jane@company.com" autocomplete="email">
           </div>
           <button type="submit" class="form__submit">
-            Get a demo
+            Get started
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
         </form>
@@ -219,11 +528,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
-      <a href="/" class="logo" aria-label="Numiris AI">
-        <span class="logo__mark">N</span>
-        <span class="logo__text">numiris</span>
-      </a>
-      <p class="footer__copy">&copy; 2026 Numiris AI. All rights reserved.</p>
+      <p class="footer__copy">&copy; 2026 Numiris. All rights reserved.</p>
     </div>
   </footer>
 
